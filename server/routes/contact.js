@@ -6,14 +6,14 @@ let contact = require('../models/contact');
 
 /* GET route for the Contact list page */
 router.get('/', (req, res, next) => {
-    contact.find((err, contactList) => {
+    contact.find().sort({name:1}).exec((err, contactList) => {
         if(err){
             return console.error(err);
         }else{
             console.log(contactList);
             res.render('contact/list', {title: 'Contact List', ContactList: contactList});
-        }
-    })
+        };
+    });
 })
 
 /* GET route for Add page */

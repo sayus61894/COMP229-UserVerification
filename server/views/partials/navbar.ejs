@@ -61,6 +61,15 @@
                 <a class="nav-link" id="contactMe" href="/contact"><i class="fas fa-comments"> Contact Me</i></a>
             </li>
 
+            <!-- Contact List -->
+            <% if(title == "Contact List") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>                
+                <a class="nav-link" id="contactList" href="/contact-list"><i class="fas fa-comments"> Contact List</i></a>
+            </li>
+
         </ul>
       </div>
 </nav>
