@@ -5,6 +5,13 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+//modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
 // Database Setup
 let mongoose = require('mongoose');
 let dbConnection = require('./db');
@@ -35,9 +42,24 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')))
 
+// router setup
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contact-list', contactRouter);
+
+// set up express sessions
+app.use(session({
+  secret: "someSecret",
+  saveUninitialized: false,
+  resave: false
+}))
+
+// initialize flash
+app.use(flash);
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
