@@ -6,18 +6,15 @@
 <main class="container">
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col my-4">
             <h1><%= title %></h1>
-            <a href="/contact-list/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Contact</a>
-            <br>
             <table class="table table-bordered table-striped table-hover">
                 <tr>
-                    <th class="text-center col-3">Name</th>
-                    <th class="text-center col-3">Phone Number</th>
-                    <th class="text-center col-4">Email</th>
-                    <th class="text-center col-1"></th>
-                    <th class="text-center col-1"></th>
-
+                    <th class="text-center ">Name</th>
+                    <th class="text-center ">Phone Number</th>
+                    <th class="text-center ">Email</th>
+                    <th class="text-center "></th>
+                    <th class="text-center "></th>
 
                 </tr>
                 <% for(let count = 0; count < ContactList.length; count++){ %>
@@ -31,6 +28,8 @@
                     </tr>
                 <% } %>
             </table>
+            <a href="/contact-list/add" class="btn btn-primary mb-2" role="button"><i class="fas fa-plus-circle"></i> Add a Contact</a>
+
         </div>
     </div>
 

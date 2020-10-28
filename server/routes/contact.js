@@ -57,14 +57,14 @@ router.get('/edit/:id', (req, res, next) => {
 router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
-    let updatedContact = Contact({
+    let updatedContact = contact({
         "_id": id,
         "name": req.body.name,
         "number": req.body.number,
         "email": req.body.email
     });
 
-    Contact.updateOne({_id: id}, updatedContact, (err) =>{
+    contact.updateOne({_id: id}, updatedContact, (err) =>{
         if(err){
             console.log(err);
             res.end(err);

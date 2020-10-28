@@ -2,31 +2,36 @@
 
 <%- include ../partials/navbar.ejs %>
 
-    <main class="container">
-        <h1 class="mt-4"><%= title %></h1>
-        <hr>
-        <div class="row">
-            <div class="col-5">
+<main class="container">
+    <h1 class="mt-4"><%= title %></h1>
+    <hr>
+    <div class="row">
+        <div class="col-3"><!-- used to center actual form --></div>
+        <div class="col-5">
+            <fieldset class="border px-4 pb-3">
+                <legend class="w-auto">Contact Info</legend>
                 <form method="POST">
                     <div class="form-group">
                         <label for="name">Name: </label>
-                        <input class="form-control" type="text" name="name" required autofocus>
+                        <input class="form-control" type="text" name="name" placeholder="Enter name here" required autofocus>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number: </label>
-                        <input class="form-control" type="tel" name="number" required >
+                        <input class="form-control" type="tel" name="number" placeholder="Enter phone number here" required >
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address: </label>
-                        <input class="form-control" type="email" name="email" required >
+                        <input class="form-control" type="email" name="email" placeholder="Enter email address here" required >
                     </div>
-                    <input type="submit" class="btn btn-primary" >
+                    <br>
+                    <input type="submit" class="btn btn-primary" value="Add Contact">
                     <a href="/contact-list" class="btn btn-warning"> Cancel</a>
                 </form>
-            </div>
+            </fieldset>
         </div>
+    </div>
 
-    </main>
+</main>
 
 
 <%- include ../partials/footer.ejs %>
