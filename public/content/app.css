@@ -1,0 +1,40 @@
+/*      
+        Filename:   app.js
+        Name:       Parth Shreyash Patel
+        StudentID:  301 134 072
+        Date:       2020-10-09
+*/
+
+.col-6{
+    text-align: center;
+}
+
+footer{
+    color: white;
+    text-align:  center
+}
+
+.proj{
+    display: none;
+}
+
+.nav-tabs>li>a.active{
+    background-color: rgb(225, 225, 225) !important;
+    color: black !important;
+}
+
+.nav-tabs>li>a:hover{
+    background-color: rgb(179, 184, 179) !important;
+    color: white !important;
+}
+.serviceCard{
+    width: 40%;
+    padding-top: 1em;;
+    display: none;
+}
+
+img.portrait{
+    width: 100%;
+}
+
+

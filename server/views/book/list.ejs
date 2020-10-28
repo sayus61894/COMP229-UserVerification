@@ -1,0 +1,39 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/navbar.ejs %>
+
+<!-- Rendering Content of Page-->
+<main class="container">
+
+    <div class="row">
+        <div class="offset-md-1 col-md-12">
+            <h1><%= title %></h1>
+            <a href="/book-list/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add a Book</a>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th class="text-center col-3">Title</th>
+                    <th class="text-center col-3">Author</th>
+                    <th class="text-center col-2">Artist</th>
+                    <th class="text-center col-2"></th>
+                    <th class="text-center col-2"></th>
+
+
+                </tr>
+                <% for(let count = 0; count < Booklist.length; count++){ %>
+                    <tr>
+                        <td class="text-center"><%= Booklist[count].Title %></td>
+                        <td class="text-center"><%= Booklist[count].Author %></td>
+                        <td class="text-center"><%= Booklist[count].Artist %></td>
+                        <td class="text-center"><a href="/book-list/edit/<%= Booklist[count]._id %>" class="btn btn-warning"> Edit</a></td>
+                        <td class="text-center"><a href="/book-list/delete/<%= Booklist[count]._id %>" class="btn btn-danger"> Delete</a></td>
+    
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+
+</main>
+
+<%- include ../partials/footer.ejs %>

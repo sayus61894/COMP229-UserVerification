@@ -1,0 +1,66 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-secondary">
+
+    <!-- Portfolio logo -->
+    <a href="/" class="navbar-brand text-light">
+        <img src="/assets/images/logo.png" alt="Parth Patel Logo" height="50" width="50">
+        Parth Patel
+    </a>
+
+    <!-- Hamburger for smaller screens -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <!-- Menu Options -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav text-secondary">
+
+            <!-- Home -->
+            <% if(title == "Home") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>
+                <a class="nav-link" id="home" href="/"><i class="fas fa-laptop-house"> Home</i></a>
+            </li>
+
+            <!-- About Me -->
+            <% if(title == "About Me") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>                
+                <a class="nav-link" id="aboutMe" href="/about"><i class="fas fa-user"> About Me</i></a>
+            </li>
+
+            <!-- Projects -->
+            <% if(title == "Projects") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>                
+                <a class="nav-link" id="projects" href="/projects"><i class="fas fa-tasks"> Projects</i></a>
+            </li>
+
+            <!-- Services -->
+            <% if(title == "Services") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>                
+                <a class="nav-link" id="services" href="/services"><i class="fas fa-concierge-bell"> Services</i></a>
+            </li>
+
+            <!-- Contact Me -->
+            <% if(title == "Contact Me") { %>
+                <li class="nav-item active">
+            <% } else { %>
+                <li class="nav-item"></li>
+            <% } %>                
+                <a class="nav-link" id="contactMe" href="/contact"><i class="fas fa-comments"> Contact Me</i></a>
+            </li>
+
+        </ul>
+      </div>
+</nav>

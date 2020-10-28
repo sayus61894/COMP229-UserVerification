@@ -1,0 +1,70 @@
+
+<!-- Using container to seperate main body into two portions -->
+<div class="container jumbotron pt-1">
+    <div class="row">
+        <!-- First column will be used to house the form -->
+        <div class="col">
+            <form>
+                <!-- First Name -->
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label" for="firstName">First Name:</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="firstName" placeholder="Jane Doe" required>
+                    </div>
+                </div>
+                <!-- Email Address -->
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label" for="emailAdd">E-mail:</label>
+                    <div class="col-8">
+                        <input type="email" class="form-control" id="emailAdd" placeholder="john@doe.com" required>
+                    </div>
+                </div>
+                <!-- Contact Number -->
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label" for="phoneNum">Phone Number:</label>
+                    <div class="col-8">
+                        <input type="tel" class="form-control" id="phoneNum" placeholder="xxx-xxx-xxxx">
+                    </div>
+                </div>
+                <!-- Comment or Question Textarea -->
+                <div class="row mb-3">
+                    <label class="col-4 col-form-label" for="comment">Comments/Questions:</label>
+                    <div class="col-8">
+                        <textarea class="form-control" id="comment" required></textarea>
+                    </div>
+                </div>
+                <!-- buttons -->
+                <div class="row">
+                    <button class="btn btn-primary col-5 " id="enter">Submit</button>
+                    <!-- Empty Div to seperate the two buttons -->
+                    <div class="col-2"></div>
+                    <button class="btn btn-primary col-5" type="reset">Reset</button>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- Second Column is my contact info -->
+        <div class="col-5 mr-0">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Parth Patel</h2>
+                    <img src="/assets/images/photo.jpg" class="card-photo portrait" alt="Portrait of myself">
+                    <h5 class="card-title mt-3">Contact Me</h5>
+                    <p class="card-text">If you have any questions, use the form on the side to get in touch with me.
+                         I will do my best to get back to you as soon as I can</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 text-right"><h6>Phone Number: </h6></div>
+                            <div class="col-8">647-123-4567</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 text-right"><h6>Email: </h6></div>
+                            <div class="col-8">ppate732@my.centennialcollege.ca</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

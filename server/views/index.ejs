@@ -1,0 +1,35 @@
+<%- include ./partials/header.ejs %>
+
+<%- include ./partials/navbar.ejs %>
+
+<!-- Jumbotron acts as the Title for all pages excluding home page. -->
+<% if(title !== "Home") { %>
+  <div class="jumbotron container mb-0 pb-1">
+    <h2 class="display-3"><%= title %></h2>
+    <hr>
+  </div>
+<% } %>
+
+<!-- Rendering Content of Page-->
+<main>
+
+  <!-- Home page -->
+  <% if(title == "Home")  { %>
+    <%- include ./mainBody/home.ejs %>
+  <!-- About Me Page -->
+  <% } else if(title == "About Me"){%>
+    <%- include ./mainBody/aboutMe.ejs %>
+  <!-- Projects Page -->
+  <% } else if(title == "Projects"){%>
+    <%- include ./mainBody/projects.ejs %>
+  <!-- Services Page -->
+  <% } else if(title == "Services"){%>
+    <%- include ./mainBody/services.ejs %>
+  <!-- Contact Me Page-->
+  <% } else if(title == "Contact Me"){%>
+      <%- include ./mainBody/contact.ejs %>
+  <% } %>
+
+</main>
+
+<%- include ./partials/footer.ejs %>
