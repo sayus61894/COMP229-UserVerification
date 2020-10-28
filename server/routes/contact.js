@@ -2,39 +2,39 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let book = require('../models/book');
+let contact = require('../models/contact');
 
-/* GET route for the book list page */
+/* GET route for the Contact list page */
 router.get('/', (req, res, next) => {
-    book.find((err, booklist) => {
+    contact.find((err, contactList) => {
         if(err){
             return console.error(err);
         }else{
-            console.log(booklist);
-            res.render('book/list', {title: 'Book List', Booklist: booklist});
+            console.log(contactList);
+            res.render('contact/list', {title: 'Contact List', ContactList: contactList});
         }
     })
 })
 
 /* GET route for Add page */
 router.get('/add', (req, res, next) => {
-    res.render('book/add', {title: 'Add Book'});
+    res.render('contact/add', {title: 'Add Contact'});
 })
 
 /* POST route for Add page */
 router.post('/add', (req, res, next) => {
-    let newBook = book({
-        "Title": req.body.Title,
-        "Author": req.body.Author,
-        "Artist": req.body.Artist
+    let newContact = contact({
+        "name": req.body.name,
+        "number": req.body.number,
+        "email": req.body.email
     });
 
-    book.create(newBook,(err, book) =>{
+    contact.create(newContact,(err, contact) =>{
         if(err){
             console.log(err);
             res.end(err);
         }else{
-            res.redirect('/book-list');
+            res.redirect('/contact-list');
         }
     });
 })
@@ -43,12 +43,12 @@ router.post('/add', (req, res, next) => {
 router.get('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
-    book.findById(id, (err, editableBook) => {
+    contact.findById(id, (err, editableContact) => {
         if(err){
             console.log(err);
             res.end(err);
         }else{
-            res.render('book/edit', {title: 'Edit Book', editableBook});
+            res.render('contact/edit', {title: 'Edit Contact', editableContact});
         }
     });
 })
@@ -57,19 +57,19 @@ router.get('/edit/:id', (req, res, next) => {
 router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
-    let updatedBook = book({
+    let updatedContact = Contact({
         "_id": id,
-        "Title": req.body.Title,
-        "Author": req.body.Author,
-        "Artist": req.body.Artist
+        "name": req.body.name,
+        "number": req.body.number,
+        "email": req.body.email
     });
 
-    book.updateOne({_id: id}, updatedBook, (err) =>{
+    Contact.updateOne({_id: id}, updatedContact, (err) =>{
         if(err){
             console.log(err);
             res.end(err);
         }else{
-            res.redirect('/book-list');
+            res.redirect('/contact-list');
         }
     });
 })
@@ -78,12 +78,12 @@ router.post('/edit/:id', (req, res, next) => {
 router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
 
-    book.remove({_id: id}, (err) => {
+    contact.remove({_id: id}, (err) => {
         if(err){
             console.log(err);
             res.end(err);
         }else{
-            res.redirect('/book-list');
+            res.redirect('/contact-list');
         }
     })
     
