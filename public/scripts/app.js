@@ -2,7 +2,7 @@
         Filename:   app.js
         Name:       Parth Shreyash Patel
         StudentID:  301 134 072
-        Date:       2020-10-09
+        Date:       2020-10-28
 */
 
 
@@ -90,6 +90,32 @@ $(function(){
                 LINK -> https://stackoverflow.com/questions/6109527/window-location-href-not-working-in-form-onsubmit */
             return false;
         }
-
     });
+
+    /* Ask for confirmation of deletion */
+    $('.deleteContactBtn').on('click', (event)=>{
+        if(confirm("Confirm deletion of contact?")){
+            alert("Contact will now be deleted");
+        }else{
+            event.preventDefault();
+            location.assign('/contact-list');
+        }
+    })
+
+    /* Ask for confirmation of edit */
+    $('.saveEdit').on('click', (event)=>{
+        if(!confirm("Save edits?")){
+            event.preventDefault();
+        }
+    })
+
+    /* Ask for confirmation for addition of contact */
+    $('.addContact').on('click', (event)=>{
+        if(!confirm("Confirm new contact?")){
+            event.preventDefault();
+            location.assign('/contact-list');
+        }
+    })
+
+    
 });

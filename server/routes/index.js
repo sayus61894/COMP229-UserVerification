@@ -1,35 +1,25 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+let indexController = require('../controllers/index');
 
 /* GET Home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET Home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home' });
-});
+router.get('/home', indexController.displayHomePage);
 
 /* GET ABout Me page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Me' });
-});
+router.get('/about', indexController.displayAboutMePage);
 
 /* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects' });
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services' });
-});
+router.get('/services', indexController.dispplayServicesPage);
 
 /* GET Contact Me page. */
-router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Me' });
-});
+router.get('/contact', indexController.displayContactMePage);
 
 /* function to download resume */
 router.get('/about/download', function(req, res, next){
