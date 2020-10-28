@@ -113,7 +113,6 @@ $(function(){
     $('.addContact').on('click', (event)=>{
         if(!confirm("Confirm new contact?")){
             event.preventDefault();
-            location.assign('/contact-list');
         }
     })
 
