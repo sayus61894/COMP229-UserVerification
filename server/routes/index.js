@@ -3,6 +3,7 @@ let router = express.Router();
 
 let indexController = require('../controllers/index');
 
+
 /* GET Home page. */
 router.get('/', indexController.displayHomePage);
 
@@ -27,5 +28,15 @@ router.get('/about/download', function(req, res, next){
   const file = "public/assets/other/ParthPatel-Resume.pdf"
   res.download(file);
 });
+
+router.get('/login', indexController.displayLoginPage);
+
+router.post('/login', indexController.processLoginPage);
+
+router.get('/register', indexController.displayRegisterPage);
+
+router.post('/register', indexController.processRegisterPage);
+
+router.get('/logout', indexController.logOutUser);
 
 module.exports = router;

@@ -1,0 +1,33 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/navbar.ejs %>
+
+<main class="container">
+    <h1 class="mt-4"><%= title %></h1>
+    <hr>
+    
+    <div class="row">
+        <div class="col-5 offset-md-3">
+            <fieldset class="border px-4 pb-3">
+                <legend class="w-auto">Login Info</legend>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="username">Username: </label>
+                        <input class="form-control" type="text" name="username" placeholder="Enter Username here" required autofocus autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password: </label>
+                        <input class="form-control" type="password" name="password" placeholder="Enter Password here" required autocomplete="off">
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary" value="Login">
+                    <a href="/" class="btn btn-warning"> Cancel</a>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+
+</main>
+
+
+<%- include ../partials/footer.ejs %>

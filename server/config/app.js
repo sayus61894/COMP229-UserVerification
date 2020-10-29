@@ -42,11 +42,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')))
 
-// router setup
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/contact-list', contactRouter);
-
 // set up express sessions
 app.use(session({
   secret: "someSecret",
@@ -55,11 +50,30 @@ app.use(session({
 }))
 
 // initialize flash
-app.use(flash);
+app.use(flash());
 
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+// passport user configuration
+
+// create user model instance
+let userModel = require('../models/user');
+let User = userModel.user;
+
+passport.use(User.createStrategy());
+
+// encrpyt and decrypt user info
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// router setup
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/contact-list', contactRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
