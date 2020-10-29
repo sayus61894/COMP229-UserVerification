@@ -9,7 +9,7 @@ let userModel = mongoose.Schema({
         trim: true,
         required: "username is required"
     },
-    /*
+    /* NOT NEEDED, PASSPORT HANDLES IT.
     password:  {
         type: String,
         default:'',

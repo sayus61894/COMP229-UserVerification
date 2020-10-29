@@ -5,14 +5,18 @@ let contactController  = require('../controllers/contact')
 
 let passport = require('passport');
 
-// helper function
+/* -- helper functions --*/
 
+// Blocks access if not a registered user
 function requireAuth(req, res, next){
   if(!req.isAuthenticated()){
     return res.redirect('/login');
   }
   next();
 }
+
+
+/* -- Contact List Routes -- */
 
 /* GET route for the Contact list page */
 router.get('/',contactController.displayContactList);

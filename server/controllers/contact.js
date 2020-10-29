@@ -9,13 +9,13 @@ module.exports.displayContactList = (req, res, next) => {
             return console.error(err);
         }else{
             console.log(contactList);
-            res.render('contact/list', {title: 'Contact List', ContactList: contactList});
+            res.render('contact/list', {title: 'Contact List', ContactList: contactList,  displayName: req.user ? req.user.displayName : ''});
         };
     });
 };
 
 module.exports.displayAddContactPage = (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact'});
+    res.render('contact/add', {title: 'Add Contact',  displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.processAddContactPage = (req, res, next) => {
@@ -43,7 +43,7 @@ module.exports.displayEditContactPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         }else{
-            res.render('contact/edit', {title: 'Edit Contact', editableContact});
+            res.render('contact/edit', {title: 'Edit Contact', editableContact,  displayName: req.user ? req.user.displayName : ''});
         }
     });
 };

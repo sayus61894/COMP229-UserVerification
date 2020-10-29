@@ -16,11 +16,20 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav text-secondary">
 
+            <!-- User -->
+            <li class="nav-item active">
+                <a class="nav-link" id="home" href="/" disabled><i class="far fa-user-circle"> <% if(displayName == ""){ %>
+                    Guest
+                 <% } else { %>
+                    <%= displayName %>
+                 <% } %></i></a>
+            </li>
+
             <!-- Home -->
             <% if(title == "Home") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>
                 <a class="nav-link" id="home" href="/"><i class="fas fa-laptop-house"> Home</i></a>
             </li>
@@ -29,7 +38,7 @@
             <% if(title == "About Me") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>                
                 <a class="nav-link" id="aboutMe" href="/about"><i class="fas fa-user"> About Me</i></a>
             </li>
@@ -38,7 +47,7 @@
             <% if(title == "Projects") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>                
                 <a class="nav-link" id="projects" href="/projects"><i class="fas fa-tasks"> Projects</i></a>
             </li>
@@ -47,7 +56,7 @@
             <% if(title == "Services") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>                
                 <a class="nav-link" id="services" href="/services"><i class="fas fa-concierge-bell"> Services</i></a>
             </li>
@@ -56,7 +65,7 @@
             <% if(title == "Contact Me") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>                
                 <a class="nav-link" id="contactMe" href="/contact"><i class="fas fa-comments"> Contact Me</i></a>
             </li>
@@ -65,10 +74,20 @@
             <% if(title == "Contact List") { %>
                 <li class="nav-item active">
             <% } else { %>
-                <li class="nav-item"></li>
+                <li class="nav-item">
             <% } %>                
                 <a class="nav-link" id="contactList" href="/contact-list"><i class="fas fa-comments"> Contact List</i></a>
             </li>
+
+            <!-- User Login/Registration -->
+            <% if(displayName == ""){ %>
+                <li class="nav-item <% if(title == 'Login' || title == 'Register') { %> 
+                    active
+                <% } %>">
+                <a href="/login" class="nav-link"><i class="fas fa-sign-in-alt"> Login/Register</i></a></li>
+             <% } else { %>
+                <li class="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-sign-out-alt"> Logout</i></a></li>
+             <% } %>
 
         </ul>
       </div>

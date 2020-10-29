@@ -29,14 +29,24 @@ router.get('/about/download', function(req, res, next){
   res.download(file);
 });
 
+/* -- User Verification Routes -- */
+
+/* GET route for login page */
 router.get('/login', indexController.displayLoginPage);
 
+/* POST route for login page */
 router.post('/login', indexController.processLoginPage);
 
+/* GET route for register page */
 router.get('/register', indexController.displayRegisterPage);
 
+/* POST route for register page */
 router.post('/register', indexController.processRegisterPage);
 
+/* GET route for logout page */
 router.get('/logout', indexController.logOutUser);
+
+
+
 
 module.exports = router;
