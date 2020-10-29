@@ -1,5 +1,5 @@
 {
-  "name": "assignment01-expressportfolio",
+  "name": "assignment02-userverification",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -35,5 +35,12 @@
     "@types/passport": "^1.0.4",
     "@types/passport-local": "^1.0.33",
     "@types/passport-local-mongoose": "^4.0.13"
-  }
+  },
+  "description": "Assignment 02 for comp229",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayus61894/COMP229-UserVerification"
+  },
+  "author": "Parth Shreyash Patel",
 }
